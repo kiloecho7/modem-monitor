@@ -96,11 +96,11 @@ public class WebLogEntry implements Comparable<WebLogEntry> {
   }
   
   public String asSqlSelect() {
-    return "select count(0) from public.modem_log where request_time = '" + sdf.format(date) + "' and ip = '" + ip + "' and url = '" + url + "'";
+    return "select count(0) from kevin.edwards.modem_log where request_time = '" + sdf.format(date) + "' and ip = '" + ip + "' and url = '" + url + "'";
   }
 
   public String asSqlInsert() {
-    return "insert into public.modem_log (request_time,ip,url) values ('" + sdf.format(date) + "', '" + ip + "', '" + url + "')";
+    return "insert into kevin.edwards.modem_log (request_time,ip,url) values ('" + sdf.format(date) + "', '" + ip + "', '" + url + "')";
   }
 
   public void setRecorded(boolean recorded) {

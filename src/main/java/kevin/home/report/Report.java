@@ -487,7 +487,7 @@ public class Report {
   private List<ModemLogSearchResultRecord> getInstancesOfUrlRequestWithinLast30Days(Connection conn, String ip, String url) throws SQLException, ClassNotFoundException {
     Date _30DaysAgo = calc30DaysAgo();
     String query =
-      "SELECT * FROM public.modem_log\n" +
+      "SELECT * FROM kevin.edwards.modem_log\n" +
       "WHERE request_time > '" + Constants.POSTGRESS_DATE_FORMAT.format(_30DaysAgo) + "'\n" +
           "   and ip = '" + ip + "'\n" +
           "   and url = '" + url + "'\n" +
@@ -558,7 +558,7 @@ public class Report {
 
   private String buildQuery(Date start, Date end, String ip) {
     String query = 
-        "SELECT * FROM public.modem_log\n" +
+        "SELECT * FROM kevin.edwards.modem_log\n" +
         "WHERE request_time between '" + Constants.POSTGRESS_DATE_FORMAT.format(start) + "' and '" + Constants.POSTGRESS_DATE_FORMAT.format(end) + "'\n" +
         "   and ip = '" + ip + "'\n" +
         "ORDER BY id";
